@@ -4,7 +4,10 @@ logs
 npm-debug.log*
 
 # Build
- dist/
+/dist
 
 # Dependency directories
 node_modules/
+
+# Mac OS flie
+DS_Store
