@@ -26,5 +26,4 @@ export class AppController {
   deleteReport() {
     return 'Deleted';
   }
-
 }
