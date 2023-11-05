@@ -8,10 +8,10 @@ export class AppController {
   @Get()
   getAllReport(@Param(EType.Income) reportType: string) {
     if (reportType === EType.Income) {
-      const result = data.report.filter((item) => item.type === EType.Income);
+      const result = data.filter((item) => item.type === EType.Income);
       console.log(result);
     } else {
-      const result = data.report.filter((item) => item.type === EType.Expanse);
+      const result = data.filter((item) => item.type === EType.Expanse);
       console.log(result);
     }
     return [];
@@ -23,12 +23,12 @@ export class AppController {
     @Param('id') reportId: string,
   ) {
     if (reportType === EType.Income) {
-      const result = data.report.filter(
+      const result = data.filter(
         (item) => item.type === EType.Income && item.id === reportId,
       );
       console.log(result);
     } else {
-      const result = data.report.filter((item) => item.type === EType.Expanse);
+      const result = data.filter((item) => item.type === EType.Expanse);
       console.log(result);
 
     }
