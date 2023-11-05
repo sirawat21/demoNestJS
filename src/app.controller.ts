@@ -1,5 +1,13 @@
-import { Controller, Get, Post, Put, Delete, Param } from '@nestjs/common';
-
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Param,
+  Body,
+} from '@nestjs/common';
+import { v4 as uuid } from 'uuid';
 import { data, EType, IData } from './reports.mockdata';
 
 // Controller for report
@@ -30,19 +38,35 @@ export class AppController {
     } else {
       const result = data.filter((item) => item.type === EType.Expanse);
       console.log(result);
-
     }
     return [];
   }
 
   @Post()
-  createReport() {
-    return 'Created';
+  createReport(@Body() { amount, source, type }: IData) {
+    const report: IData = {
+      id: uuid(),
+      amount: amount,
+      source: source,
+      type: type,
+      created_at: Date.now(),
+      updated_at: Date.now(),
+    };
+    console.log(report);
   }
 
-  @Put()
-  updateReport() {
-    return 'Updated';
+  @Put(':id')
+  updateReport(@Body() { amount, source, type }: IData) {
+    const report: IData = {
+      id: uuid(),
+      amount: amount,
+      source: source,
+      type: type,
+      created_at: Date.now(),
+      updated_at: Date.now(),
+    };
+    console.log(report);
+    return [];
   }
 
   @Delete(':id')

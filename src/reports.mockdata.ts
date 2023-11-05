@@ -6,12 +6,12 @@ export enum EType {
 
 // Interface Data
 export interface IData {
-  id: string;
+  id?: string;
   source: string;
   amount: number;
-  created_at: number;
-  updated_at: number;
-  type: EType;
+  created_at?: number;
+  updated_at?: number;
+  type?: EType;
 }
 
 // Data
